@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require 'json'
 
 class Scraper
   file = File.open('contestants.json', "w")
@@ -59,5 +60,5 @@ class Scraper
     end
   end
 
-  file.puts(survivor_json)
+  file.puts(survivor_json.to_json)
 end
